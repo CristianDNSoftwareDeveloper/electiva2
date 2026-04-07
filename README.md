@@ -16,6 +16,23 @@ npm run check
 npm run build
 ```
 
+## CI/CD
+
+El proyecto queda preparado para CI/CD con GitHub Actions y despliegue automatico en GitHub Pages usando el workflow [`deploy.yml`](./.github/workflows/deploy.yml).
+
+Pasos en GitHub:
+
+```text
+Settings > Pages > Build and deployment > Source = GitHub Actions
+```
+
+Cada push a `main` ejecuta:
+
+- instalacion de dependencias con `npm ci`
+- validacion con `npm run lint`
+- build estatico con `npm run build`
+- publicacion del directorio `build` en GitHub Pages
+
 ## Estructura
 
 - `src/lib/core`: cliente HTTP, configuracion y adaptadores.
